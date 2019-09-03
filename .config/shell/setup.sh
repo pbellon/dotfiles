@@ -1,10 +1,15 @@
-#!/usr/bin/sh
+#!/usr/bin/env bash
+
+
+export SHELL_CONF_DIR=$HOME/.config/shell
 
 # custom utils, paths etc. 
-. ~/opt/shell/paths.sh
-. ~/opt/shell/maven.sh
-. ~/opt/shell/aliases.sh
-. ~/opt/shell/functions.sh
+source $SHELL_CONF_DIR/variables.sh
+source $SHELL_CONF_DIR/paths.sh
+source $SHELL_CONF_DIR/sdkman.sh
+source $SHELL_CONF_DIR/maven.sh
+source $SHELL_CONF_DIR/aliases.sh
+source $SHELL_CONF_DIR/functions.sh
 
 # Autojump activation
-. /usr/share/autojump/autojump.sh
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh

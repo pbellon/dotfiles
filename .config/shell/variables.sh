@@ -1,0 +1,6 @@
+export OPT="$HOME/opt"
+export JAVA_HOME="/usr/lib/jvm/java-1.8.0-openjdk"
+export ANDROID_HOME="$OPT/Android/Sdk"
+export PLAY_HOME="$OPT/play-1.5.2"
+export JMETER_HOME="$OPT/apache-jmeter-5.1.1"
+export DOCKER_HOST=""
