@@ -1,9 +1,12 @@
 #!/usr/bin/env sh
 
 tools(){
+    echo "Installing tools..."
     for tool in tools/*.sh; do
+        echo "Running $tool"
         sh $tool
     done
+    echo "...done with tools"
 }
 
 bashrc(){
@@ -22,21 +25,38 @@ opt(){
     if [ ! -d ~/opt ]; then
         mkdir ~/opt/
     fi;
-    cp ./opt ~/opt -r 
+    cp ./opt/* ~/opt -r 
 }
 
-install(){
+config(){
+    cp ./.config/* ~/.config -r
+}
+
+all(){
     tools
-    bashrc
     opt
+    config
+    bashrc
+}
+
+help(){
+    b=$(tput bold)
+    n=$(tput sgr0)
+
+    echo -e "Usage:
+./configure.sh <task>
+
+Available tasks:              
+
+        ${b}help${n}    show this message
+        ${b}all${n}     run all configuration tasks (see bellow)
+        ${b}opt${n}     configure ~/opt directory
+        ${b}tools${n}   install dependencies located under tools dir"
 }
 
 
-if [ "$1" = "tools" ]; then
-    echo "Installing dependencies"
-    tools
+if [[ "$(type -t $@)" =~ .*function ]]; then
+    eval $(printf "%q " "$@")
 else
-    echo "Installing..."
-    install
+    help
 fi
-echo "...Done"
