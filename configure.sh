@@ -1,5 +1,10 @@
 #!/usr/bin/env sh
 
+tools(){
+    for tool in tools/*.sh; do
+        sh $tool
+    done
+}
 
 bashrc(){
     if [ -f ~/.bashrc ]; then
@@ -21,11 +26,17 @@ opt(){
 }
 
 install(){
+    tools
     bashrc
     opt
 }
 
 
-echo "Installing..."
-install
+if [ "$1" = "tools" ]; then
+    echo "Installing dependencies"
+    tools
+else
+    echo "Installing..."
+    install
+fi
 echo "...Done"

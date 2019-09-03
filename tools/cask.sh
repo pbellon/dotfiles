@@ -1,3 +1,4 @@
 #!/usr/bin/env sh
-
-curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+if [ ! -d ~/.cask/ ]; then
+    curl -fsSL https://raw.githubusercontent.com/cask/cask/master/go | python
+fi
