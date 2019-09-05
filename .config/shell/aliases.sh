@@ -19,5 +19,11 @@ alias gp="git push"
 alias gl="git pull"
 alias gd="git diff"
 alias gb="git branch"
+alias gco="git checkout"
 
 alias refresh="source ~/.bashrc"
+
+alias py="python"
+alias py3="python3"
+
+alias jmeter="$JMETER_HOME/bin/jmeter.sh"
