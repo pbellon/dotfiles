@@ -17,7 +17,7 @@ opt(){
     if [ ! -d ~/opt ]; then
         mkdir ~/opt/
     fi;
-    cp ./opt ~/opt -r 
+    cp ./opt/* ~/opt -r 
 }
 
 install(){
