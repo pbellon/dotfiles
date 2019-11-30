@@ -1,0 +1,9 @@
+#+TITLE: Toutenrab dotfiles
+* How to install ?
+Via git ~git clone https://git.trb.sh/Toutenrab/dotfiles.git~
+The dotfiles are meant to be used with GNU stow, a symlink farm manager.
+
+To configure a sub dotfiles simply run:
+#+BEGIN_SRC shell
+stow -t ~ fish # Will link dotfiles fish to ~/.config/fish
+#+END_SRC
