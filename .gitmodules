@@ -1,9 +1,9 @@
 [submodule "secrets"]
-	path = secrets
+	path = modules/secrets
 	url = git@trb.sh:/git/secrets.git
 [submodule "emacs/.emacs.d"]
-	path = emacs/.emacs.d
+	path = modules/emacs/.emacs.d
 	url = git@github.com:pbellon/.emacs.d
 [submodule "notes/notes"]
-	path = notes/notes
+	path = modules/notes/notes
 	url = git@trb.sh:/git/notes.git
