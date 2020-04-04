@@ -10,4 +10,5 @@ alias ga="git add"
 alias grm="git rm"
 
 alias :q="exit"
-alias :e="vim"
+alias :e="emacsclient"
+alias coverage="yarn coverage && xdg-open coverage/lcov-report/index.html"
